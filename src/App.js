@@ -25,6 +25,11 @@ class App extends React.Component {
   captureInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  onSubmit = (styleObject) => {
+    let fontSize = styleObject.fontSize;
+    let colorCode = styleObject.colorCode;
+    this.setState({ fontSize: fontSize, colorCode: colorCode });
+  };
   setStars = (e) => {
     this.setState({
       stars: Array.from(
@@ -51,6 +56,7 @@ class App extends React.Component {
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
               <StyleCreator
+                onSubmit={this.onSubmit}
                 fontSize={this.state.fontSize}
                 colorCode={this.state.colorCode}
                 starLength={this.state.stars.length}
