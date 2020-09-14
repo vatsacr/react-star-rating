@@ -1,31 +1,39 @@
 import React, { Component } from "react";
 
 export class StyleCreator extends Component {
-  styleAttributes = { fontSize: "40px", colorCode: "#F9C900" };
+  state = {
+    fontSize: "40px",
+    colorCode: "#F9C900",
+  };
   captureInput = (e) => {
-    this.styleAttributes[e.target.name] = e.target.value;
+    this.setState({ [e.target.name]: e.target.value });
   };
   render() {
     return (
       <div>
-        <div
-          className="fa fa-star-o"
-          style={{
-            fontSize: this.styleAttributes.fontSize,
-            color: this.styleAttributes.colorCode,
-          }}
-        ></div>
-        <div
-          className="fa fa-star"
-          style={{
-            fontSize: this.styleAttributes.fontSize,
-            color: this.styleAttributes.colorCode,
-          }}
-        ></div>
+        <div className="text-center">
+          <div
+            className="fa fa-star-o"
+            style={{
+              fontSize: this.state.fontSize,
+              color: this.state.colorCode,
+            }}
+          ></div>
+          <div
+            className="fa fa-star"
+            style={{
+              fontSize: this.state.fontSize,
+              color: this.state.colorCode,
+            }}
+          ></div>
+        </div>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            this.props.onSubmit(this.styleAttributes);
+            this.props.onSubmit({
+              colorCode: this.state.colorCode,
+              fontSize: this.state.fontSize,
+            });
           }}
         >
           <div className="form-group">
