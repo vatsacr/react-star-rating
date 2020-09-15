@@ -8,7 +8,7 @@ class App extends React.Component {
     hoveredId: 0,
     rating: 0,
     colorCode: "#F9C900",
-    fontSize: "90px",
+    fontSize: "40px",
     stars: [1, 2, 3, 4, 5],
   };
   handleMouseEnter = (e) => {
