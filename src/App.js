@@ -20,7 +20,9 @@ class App extends React.Component {
   };
 
   handleClick = (e) => {
-    this.setState({ rating: e.target.id });
+    this.setState({
+      rating: e.target.id,
+    });
   };
   captureInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -28,13 +30,11 @@ class App extends React.Component {
   onSubmit = (styleObject) => {
     let fontSize = styleObject.fontSize;
     let colorCode = styleObject.colorCode;
-    this.setState({ fontSize: fontSize, colorCode: colorCode });
-  };
-  setStars = (e) => {
+    let starLength = styleObject.starLength;
     this.setState({
-      stars: Array.from(
-        Array.from({ length: e.target.value }, (_, i) => i + 1)
-      ),
+      fontSize: fontSize,
+      colorCode: colorCode,
+      stars: Array.from(Array.from({ length: starLength }, (_, i) => i + 1)),
     });
   };
   render() {
@@ -57,10 +57,6 @@ class App extends React.Component {
             <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
               <StyleCreator
                 onSubmit={this.onSubmit}
-                fontSize={this.state.fontSize}
-                colorCode={this.state.colorCode}
-                starLength={this.state.stars.length}
-                setStars={this.setStars}
                 captureInput={this.captureInput}
               />
             </div>
