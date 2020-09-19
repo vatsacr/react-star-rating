@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class StyleVisualizer extends Component {
   render() {
     return (
-      <div className="text-center">
+      <div className="text-center mt-5">
         <div
           className="fa fa-star-o"
           style={{

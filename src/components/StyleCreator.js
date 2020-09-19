@@ -13,10 +13,6 @@ export class StyleCreator extends Component {
   render() {
     return (
       <div>
-        <StyleVisualizer
-          fontSize={this.state.fontSize}
-          colorCode={this.state.colorCode}
-        />
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -73,6 +69,10 @@ export class StyleCreator extends Component {
             Generate
           </button>
         </form>
+        <StyleVisualizer
+          fontSize={this.state.fontSize}
+          colorCode={this.state.colorCode}
+        />
       </div>
     );
   }

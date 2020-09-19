@@ -1,0 +1,15 @@
+.mt-11 {
+  margin-top: 11%;
+}
+
+body {
+  background: #efefef;
+}
+
+.star-rating-card {
+  border: 1px solid #cfcfcf;
+  box-shadow: 5px 5px 5px #cfcfcf;
+  border-radius: 5px;
+  padding: 3em;
+  background: #ffffff;
+}

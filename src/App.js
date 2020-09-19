@@ -39,7 +39,8 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="container">
+      <div className="star-rating-card container mt-11">
+        <h1 className="text-center">Star Rating Creator</h1>
         <div className="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12 p-2">
           <div className="row">
             <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 text-center my-auto">
@@ -54,7 +55,7 @@ class App extends React.Component {
                 fontSize={this.state.fontSize}
               />
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-5">
               <StyleCreator
                 onSubmit={this.onSubmit}
                 captureInput={this.captureInput}
